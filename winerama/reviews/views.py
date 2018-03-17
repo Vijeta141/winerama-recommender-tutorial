@@ -95,7 +95,7 @@ def user_recommendation_list(request):
     # then get a wine list including the previous IDs, order by rating
     wine_list = sorted(
         list(Wine.objects.filter(id__in=other_users_reviews_wine_ids)), 
-        key=lambda x: x.average_rating, 
+        key=lambda x: x.average_rating(), 
         reverse=True
     )
 
